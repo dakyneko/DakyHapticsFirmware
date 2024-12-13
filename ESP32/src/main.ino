@@ -69,7 +69,7 @@ void loop() {
         break;
     }
 
-    case 'm': { // send motor value
+    case 'B': { // send motor value
         struct __attribute__((packed)) { uint8_t motor_id; uint8_t strength; }* data;
         if (size != sizeof(*data)) goto signal_error;
         data = (typeof(data))raw;

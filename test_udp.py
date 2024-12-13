@@ -29,4 +29,4 @@ def blink():
     write('/')
 
 def set_motor(motor, value):
-    write('m', 'BB', motor, value)
+    write('B', 'BB', motor, value)
