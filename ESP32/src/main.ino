@@ -20,10 +20,9 @@ void setup() {
 
     // setup pins
     pinMode(LED_BUILTIN, OUTPUT);
-    analogWriteFrequency(8000);
-    analogWriteResolution(8); // max 255
     for (int i = 0; i < MOTORS_COUNT; ++i) {
         pinMode(motors_pins[i], OUTPUT);
+        ledcChangeFrequency(motors_pins[i], 8000, 8); // 8Khz, counter 8 bits (256)
     }
 
     WiFi.mode(WIFI_STA);
